@@ -8,11 +8,21 @@ class Coche extends Vehiculo
 
     public function __construct($id, $marca, $modelo, $matricula, $precioDia, $numeroPuertas, $tipoCombustible)
     {
-        return parent::__construct($id, $marca, $modelo, $matricula, $precioDia);
+        parent::__construct($id, $marca, $modelo, $matricula, $precioDia);
 
         $this->numeroPuertas = $numeroPuertas;
         $this->tipoCombustible = $tipoCombustible;
     }
 
-    
+    public function calcularAlquiler($dias){
+
+        $precioFinal = parent ::calcularAlquiler($dias);
+
+        if($this->tipoCombustible=="electrico"){
+            $precioFinal= $precioFinal*1.05;
+        
+        }
+        return $precioFinal;
+    }
+
 }
