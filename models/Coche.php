@@ -14,15 +14,45 @@ class Coche extends Vehiculo
         $this->tipoCombustible = $tipoCombustible;
     }
 
-    public function calcularAlquiler($dias){
+    public function calcularAlquiler($dias)
+    {
 
-        $precioFinal = parent ::calcularAlquiler($dias);
+        $precioFinal = parent::calcularAlquiler($dias);
 
-        if($this->tipoCombustible=="electrico"){
-            $precioFinal= $precioFinal*1.05;
-        
+        if ($this->tipoCombustible == "electrico") {
+            $precioFinal = $precioFinal * 1.05;
         }
         return $precioFinal;
     }
+    /**
+     * Get the value of numeroPuertas
+     */
+    public function getNumeroPuertas()
+    {
+        return $this->numeroPuertas;
+    }
 
+    /**
+     * Set the value of numeroPuertas
+     */
+    public function setNumeroPuertas($numeroPuertas)
+    {
+        $this->numeroPuertas = $numeroPuertas;
+    }
+
+    /**
+     * Get the value of tipoCombustible
+     */
+    public function getTipoCombustible()
+    {
+        return $this->tipoCombustible;
+    }
+
+    /**
+     * Set the value of tipoCombustible
+     */
+    public function setTipoCombustible($tipoCombustible)
+    {
+        $this->tipoCombustible = $tipoCombustible;
+    }
 }
