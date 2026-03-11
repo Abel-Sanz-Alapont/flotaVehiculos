@@ -17,4 +17,9 @@ class Vehiculo{
         $this->precioDia=$precioDia;
     }
 
+    public function calcularAlquiler($dias){
+
+        return $precioTotal=$this->precioDia*$dias;
+    }
+
 }
