@@ -41,4 +41,21 @@ class GestorPDO extends Connection
         }
         return $arrayMotocicletas;
     }*/
+        public function agregarCoches(Coche $coche)
+    {
+        $consultaSQL = 'INSERT INTO flotaVehiculos (tipoVehiculo, marca, modelo, matricula, precioDia, numeroPuertas, tipoCombustible) VALUES (:tipoVehiculo, :marca, :modelo, :precioDia, :numeroPuertas, :tipoCombustible)';
+
+        $stmt = $this->conn->prepare($consultaSQL);
+
+        $stmt->bindValue(':tipoVehiculo', 'Coche');
+        $stmt->bindValue(':marca', $coche->getMarca());
+        $stmt->bindValue(':modelo', $coche->getModelo());
+        $stmt->bindValue(':matricula', $coche->getMatricula());
+        $stmt->bindValue(':precioDia', $coche->getPrecio());
+        $stmt->bindValue(':numeroPuertas', $coche->getNumeroPuertas());
+        $stmt->bindValue(':tipoCombustible', $coche->getTipoCombustible());
+
+        
+        return $stmt->execute();    
+    }
 }
