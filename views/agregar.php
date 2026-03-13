@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <h1>Agregar Coche</h1>
+    <h1>Agregar Coches</h1>
     <form method="POST">
         Nombre:<br>
         <input type="text" name="marca" require><br>
@@ -20,7 +20,7 @@
     </form>
     <br>
 
-    <!--<h1>Agregar Motocicleta</h1>
+    <!--<h1>Agregar Motocicletas</h1>
     <form method="POST">
         Nombre:<br>
         <input type="text" name="nombre" require><br>
