@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 require_once "autoload.php";
 
 $gestor = new GestorPDO();
@@ -11,26 +9,15 @@ $controller = new Controller($gestor);
 $accion = $_GET['accion'] ?? 'index';
 
 switch ($accion) {
-    case 'editarCoche':
+    case 'editarCoches':
         $controller->editar();
         break;
-    case 'editarMoto':
-        $controller->editar();
-        break;
-    /*case 'eliminarCoche':
+    case 'eliminarCoches':
         $controller->eliminar();
         break;
-    case 'eliminarMoto':
-        $controller->eliminar();
-        break;
-    case 'agregarCoche':
+    case 'agregarCoches':
         $controller->agregar();
         break;
-    case 'agregarMoto':
-        $controller->agregar();
-        break;*/
-
-
     default:
         $controller->index();
 }
