@@ -2,6 +2,6 @@
     "host":"db",
     "userName":"root",
     "password":"test",
-    "db":"flotaVehiculos"
+    "db":"Vehiculos"
 
 }
