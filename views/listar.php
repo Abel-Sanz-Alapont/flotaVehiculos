@@ -32,8 +32,6 @@
                 <td><?= $coches->getPrecioDia() ?></td>
                 <td><?= $coches->getNumeroPuertas() ?></td>
                 <td><?= $coches->getTipoCombustible() ?></td>
-                <td><?= $coches->getCilindrada() ?></td>
-                <td><?= $coches->getTipoCombustible() ?></td>
 
                 <td>
                     <!--Boton Editar-->
