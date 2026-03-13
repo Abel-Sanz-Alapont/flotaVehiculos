@@ -7,13 +7,13 @@ conectándose a MySQL mediante PDO y aplicando la herencia de clases para difere
 
 Requisitos Técnicos Obligatorios
 
-1. Arquitectura MVC: Separación estricta entre la lógica de acceso a datos(Modelos), la interfaz de usuario (Vistas) y el enrutamiento/lógica de aplicación
-(Controladores).
+1. Arquitectura MVC: Separación estricta entre la lógica de acceso a datos(Modelos), 
+   la interfaz de usuario (Vistas) y el enrutamiento/lógica de aplicación(Controladores).
 
-2. Base de Datos (MySQL + PDO): Uso exclusivo de la extensión PDO para la conexión.
+1. Base de Datos (MySQL + PDO): Uso exclusivo de la extensión PDO para la conexión.
    Es obligatorio usar sentencias preparadas para evitar inyecciones SQL en todo el CRUD.
 
-3. Programación Orientada a Objetos (Herencia):
+2. Programación Orientada a Objetos (Herencia):
     o Clase padre (genérica): Vehiculo.
     o Clases hijas: Coche y Motocicleta.
 
@@ -22,17 +22,23 @@ Estructura de Clases Requerida
 • Clase Base Vehiculo:
 
     o Atributos (protected): id, marca, modelo, matricula, precioDia.
-    o Métodos: Constructor, getters, setters y un método calcularAlquiler($dias) que devuelva el coste base multiplicando los días por el precio.
+
+    o Métodos: Constructor, getters, setters y un método calcularAlquiler($dias) 
+        que devuelva el coste base multiplicando los días por el precio.
 
 • Clase Hija Coche (Hereda de Vehiculo):
 
     o Atributos específicos: numeroPuertas, tipoCombustible (diésel,gasolina, eléctrico, híbrido).
-    o Métodos: Sobrescribir calcularAlquiler($dias) para aplicar, por ejemplo, un recargo del 5% al coste base si es un coche eléctrico (por temas de carga).
+    
+    o Métodos: Sobrescribir calcularAlquiler($dias) para aplicar, por ejemplo, un recargo del 5% 
+        al coste base si es un coche eléctrico (por temas de carga).
 
 • Clase Hija Motocicleta (Hereda de Vehiculo):
 
     o Atributos específicos: cilindrada (ej. 125cc,500cc), incluyeCasco (booleano).
-    o Métodos: Sobrescribir calcularAlquiler($dias) para añadir un extra fijo (ej. 10€) si la moto incluye casco.
+
+    o Métodos: Sobrescribir calcularAlquiler($dias) 
+        para añadir un extra fijo (ej. 10€) si la moto incluye casco.
 
 Funcionalidades del Sistema (CRUD)
 
@@ -50,12 +56,14 @@ Funcionalidades del Sistema (CRUD)
 
 Esquema de Base de Datos Sugerido
 
-    Para manejar la persistencia de datos manteniendo las cosas simples con PDO, utilizaremos el patrón de "Tabla Única" (Single Table Inheritance):
+    Para manejar la persistencia de datos manteniendo las cosas simples con PDO, 
+    utilizaremos el patrón de "Tabla Única" (Single Table Inheritance):
 
 • Tabla flotaVehiculos:
 
     o id (INT, Primary Key, Auto Increment)
-    o tipoVehiculo (ENUM('Coche', 'Motocicleta')) -> Vital para saber qué clase instanciar al hacer un SELECT. Contendrá o 'Coche' o 'Motocicleta'.
+    o tipoVehiculo (ENUM('Coche', 'Motocicleta')) -> Vital para saber qué clase instanciar al hacer un SELECT. 
+        Contendrá o 'Coche' o 'Motocicleta'.
     o marca (VARCHAR)
     o modelo (VARCHAR)
     o matricula (VARCHAR, Unique)

@@ -11,7 +11,6 @@ class Controller
     public function index()
     {
         $arrayCoches = $this->gestor->listarCoche(); //devuelve array de objetos
-
         include "views/listar.php";
     }
 
