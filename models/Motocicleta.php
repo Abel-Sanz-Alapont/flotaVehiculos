@@ -25,4 +25,37 @@ class Motocicleta extends Vehiculo{
         return $precioFinal;
     }
 
+
+    /**
+     * Get the value of cilindrada
+     */
+    public function getCilindrada()
+    {
+        return $this->cilindrada;
+    }
+
+    /**
+     * Set the value of cilindrada
+     */
+    public function setCilindrada($cilindrada)
+    {
+        $this->cilindrada = $cilindrada;
+    }
+
+    /**
+     * Get the value of incluyeCasco
+     */
+    public function getIncluyeCasco()
+    {
+        return $this->incluyeCasco;
+    }
+
+    /**
+     * Set the value of incluyeCasco
+     */
+    public function setIncluyeCasco($incluyeCasco)
+    {
+        $this->incluyeCasco = $incluyeCasco;
+
+    }
 }
