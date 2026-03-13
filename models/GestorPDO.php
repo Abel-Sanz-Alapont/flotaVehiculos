@@ -8,14 +8,14 @@ class GestorPDO extends Connection
         return parent::__construct();
     }
 
-    public function listarCoche()
+    public function listarCoches()
     {
 
         $consulta = "SELECT * FROM flotaVehiculos";
         $rtdo = $this->getConn()->query($consulta);
         $arrayCoches = [];
         while ($value = $rtdo->fetch(PDO::FETCH_ASSOC)) {
-            $coche = new Vehiculo(
+            $coche = new Coche(
                 $value['id'], 
                 $value['marca'],
                 $value['modelo'],
@@ -51,7 +51,7 @@ class GestorPDO extends Connection
         $stmt->bindValue(':marca', $coche->getMarca());
         $stmt->bindValue(':modelo', $coche->getModelo());
         $stmt->bindValue(':matricula', $coche->getMatricula());
-        $stmt->bindValue(':precioDia', $coche->getPrecio());
+        $stmt->bindValue(':precioDia', $coche->getPrecioDia());
         $stmt->bindValue(':numeroPuertas', $coche->getNumeroPuertas());
         $stmt->bindValue(':tipoCombustible', $coche->getTipoCombustible());
 
