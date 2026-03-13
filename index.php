@@ -16,7 +16,7 @@ switch ($accion) {
         $controller->eliminar();
         break;
     case 'agregarCoches':
-        $controller->agregar();
+        $controller->agregarCoches();
         break;
     default:
         $controller->index();
