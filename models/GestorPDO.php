@@ -15,8 +15,17 @@ class GestorPDO extends Connection
         $rtdo = $this->getConn()->query($consulta);
         $arrayCoches = [];
         while ($value = $rtdo->fetch(PDO::FETCH_ASSOC)) {
-            $Cohe = new Vehiculo($value['matricula'], $value['modelo'], $value['numeroPuertas'], $value['tipoCombustible'], $value['tipoVehiculo'], $value['id']);
-            $arrayVehiculos[] = $Cohe;
+            $coche = new Vehiculo(
+                $value['id'], 
+                $value['marca'],
+                $value['modelo'],
+                $value['matricula'], 
+                $value['precioDia'], 
+                $value['numeroPuertas'], 
+                $value['tipoCombustible']
+            );
+
+            $arrayVehiculos[] = $coche;
         }
         return $arrayCoches;
     }
