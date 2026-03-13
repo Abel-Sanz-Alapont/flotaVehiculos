@@ -10,7 +10,7 @@ $accion = $_GET['accion'] ?? 'index';
 
 switch ($accion) {
     case 'editarCoches':
-        $controller->editar();
+        $controller->editarCoches();
         break;
     case 'eliminarCoches':
         $controller->eliminar();
