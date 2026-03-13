@@ -12,11 +12,11 @@ switch ($accion) {
     case 'editarCoches':
         $controller->editarCoches();
         break;
-    case 'eliminarCoches':
-        $controller->eliminar();
-        break;
     case 'agregarCoches':
         $controller->agregarCoches();
+        break;
+    case 'eliminar':
+        $controller->eliminar();
         break;
     default:
         $controller->index();
