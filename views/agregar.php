@@ -14,7 +14,7 @@
 
 <body>
     <main>
-        <h1>Formulario para Agregar Vehiculos(Coches/Motocicletas)</h1>
+        <h1>Formulario para Agregar Vehiculos(Coches/Motocicletas)</h1><a href="index.php">Volver a Index</a>
         <hr>
     </main>
     <nav>
@@ -44,6 +44,7 @@
         <input type="number" name="precioDia" placeholder="Precio" require><br>
         <input type="number" name="casco" placeholder="Casco" require><br>
         <input type="text" name="cilindrada" placeholder="Cilindrada" require><br>
+        <br>
 
         <button type="submit">Agregar Motocicleta</button>
         </form>
@@ -52,7 +53,8 @@
         <form method="POST">
 
     </nav>
-    <a href="index.php">Volver a Index</a>
+    <br>
+    
 </body>
 
 </html>
