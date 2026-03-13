@@ -40,11 +40,11 @@
                     <form method="POST" action="index.php?accion=editarCoche" style="display:inline;">
                         <input type="hidden" name="id" value="<?= $persona->getId() ?>">
                         Marca: <input type="text" name="marca" value="<?= $persona->getMarca() ?>" required>
-                        Modelo: <input type="text" name="marca" value="<?= $persona->getModelo() ?>" required>
-                        Matricula: <input type="text" name="marca" value="<?= $persona->getMatricula() ?>" required>
-                        Precio Total: <input type="text" name="marca" value="<?= $persona->getPrecioDia() ?>" required>
-                        Numero Puertas: <input type="text" name="marca" value="<?= $persona->getNumeroPuertas() ?>" required>
-                        Combustible: <input type="text" name="marca" value="<?= $persona->getTipoCombustible() ?>" required>
+                        Modelo: <input type="text" name="modelo" value="<?= $persona->getModelo() ?>" required>
+                        Matricula: <input type="text" name="matricula" value="<?= $persona->getMatricula() ?>" required>
+                        Precio Total: <input type="number" name="precioDia" value="<?= $persona->getPrecioDia() ?>" required>
+                        Numero Puertas: <input type="number" name="numeroPuertas" value="<?= $persona->getNumeroPuertas() ?>" required>
+                        Combustible: <input type="text" name="tipoCombustible" value="<?= $persona->getTipoCombustible() ?>" required>
 
                         <button type="submit">Guardar</button>
                         <!--Boton Eliminar-->
