@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <?= "<h1>Hello, Welcome DAW Student!</h1>"; ?>
-    <a href="index.php?accion=agregarCoches">Vehiculo a la DB</a>
+    <?= "<h1>Gestor de Vehiculos</h1>"; ?>
+    <a href="index.php?accion=agregarCoches">Formulario para Agregar mas Vehiculos</a>
     <div class="container-fluid">
         <?= '<table class="table table-striped">'; ?>
         <?= '<thead>
@@ -19,8 +19,9 @@
                         <th>Modelo</th>
                         <th>Matricula</th>
                         <th>Precio</th>
+                        <th>Puertas</th>
                         <th>Combustible</th>
-                        <th>Opciones</th>
+                        <th>Opciones CRUD</th>
                     </tr>
                 </thead>'; ?>
         <?php foreach ($arrayCoches as $coches): ?>
@@ -39,11 +40,11 @@
                         <input type="hidden" name="id" value="<?= $coches->getId() ?>">
                         Marca: <input type="text" name="marca" value="<?= $coches->getMarca() ?>" required>
                         Modelo: <input type="text" name="modelo" value="<?= $coches->getModelo() ?>" required>
-                        Matricula: <input type="text" name="matricula" value="<?= $coches->getMatricula() ?>" required>
+                        Matricula: <input type="text" name="matricula" value="<?= $coches->getMatricula() ?>" required><br>
                         Precio Total: <input type="number" name="precioDia" value="<?= $coches->getPrecioDia() ?>" required>
                         Numero Puertas: <input type="number" name="numeroPuertas" value="<?= $coches->getNumeroPuertas() ?>" required>
-                        Combustible: <input type="text" name="tipoCombustible" value="<?= $coches->getTipoCombustible() ?>" required>
-
+                        Combustible: <input type="text" name="tipoCombustible" value="<?= $coches->getTipoCombustible() ?>" required><br>
+                        <br>
                         <button type="submit">Guardar</button>
                         <!--Boton Eliminar-->
                 <td><a href="index.php?accion=eliminar&id=<?= $coches->getId() ?>">Eliminar </td>
