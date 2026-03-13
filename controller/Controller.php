@@ -25,8 +25,8 @@ class Controller
                 $numeroPuertas=$_POST['numeroPuertas'];
                 $tipoCombustible=$_POST['tipoCombustible'];
 
-            $nuevoCoche = new Persona(null,$marca,$modelo,$matricula,$precioDia,$numeroPuertas,$tipoCombustible);
-            $this->gestor->agregar($nuevoCoche);
+            $nuevoCoche = new Coche(null,$marca,$modelo,$matricula,$precioDia,$numeroPuertas,$tipoCombustible);
+            $this->gestor->agregarCoches($nuevoCoche);
 
             header("Location: index.php");
             exit;
