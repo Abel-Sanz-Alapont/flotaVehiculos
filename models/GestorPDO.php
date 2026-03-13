@@ -25,7 +25,7 @@ class GestorPDO extends Connection
                 $value['tipoCombustible']
             );
 
-            $arrayVehiculos[] = $coche;
+            $arrayCoches[] = $coche;
         }
         return $arrayCoches;
     }
@@ -43,7 +43,8 @@ class GestorPDO extends Connection
     }*/
         public function agregarCoches(Coche $coche)
     {
-        $consultaSQL = 'INSERT INTO flotaVehiculos (tipoVehiculo, marca, modelo, matricula, precioDia, numeroPuertas, tipoCombustible) VALUES (:tipoVehiculo, :marca, :modelo, :precioDia, :numeroPuertas, :tipoCombustible)';
+        
+        $consultaSQL = 'INSERT INTO flotaVehiculos (tipoVehiculo, marca, modelo, matricula, precioDia, numeroPuertas, tipoCombustible) VALUES (:tipoVehiculo, :marca, :modelo, :matricula, :precioDia, :numeroPuertas, :tipoCombustible)';
 
         $stmt = $this->conn->prepare($consultaSQL);
 
