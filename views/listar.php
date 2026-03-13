@@ -9,7 +9,7 @@
 
 <body>
     <?= "<h1>Hello, Welcome DAW Student!</h1>"; ?>
-    <a href="index.php?accion=agregar">Vehiculo a la DB</a>
+    <a href="index.php?accion=agregarCoches">Vehiculo a la DB</a>
     <div class="container-fluid">
         <?= '<table class="table table-striped">'; ?>
         <?= '<thead>
@@ -37,18 +37,18 @@
 
                 <td>
                     <!--Boton Editar-->
-                    <form method="POST" action="index.php?accion=editarCoche" style="display:inline;">
-                        <input type="hidden" name="id" value="<?= $persona->getId() ?>">
-                        Marca: <input type="text" name="marca" value="<?= $persona->getMarca() ?>" required>
-                        Modelo: <input type="text" name="modelo" value="<?= $persona->getModelo() ?>" required>
-                        Matricula: <input type="text" name="matricula" value="<?= $persona->getMatricula() ?>" required>
-                        Precio Total: <input type="number" name="precioDia" value="<?= $persona->getPrecioDia() ?>" required>
-                        Numero Puertas: <input type="number" name="numeroPuertas" value="<?= $persona->getNumeroPuertas() ?>" required>
-                        Combustible: <input type="text" name="tipoCombustible" value="<?= $persona->getTipoCombustible() ?>" required>
+                    <form method="POST" action="index.php?accion=editarCoches" style="display:inline;">
+                        <input type="hidden" name="id" value="<?= $coches->getId() ?>">
+                        Marca: <input type="text" name="marca" value="<?= $coches->getMarca() ?>" required>
+                        Modelo: <input type="text" name="modelo" value="<?= $coches->getModelo() ?>" required>
+                        Matricula: <input type="text" name="matricula" value="<?= $coches->getMatricula() ?>" required>
+                        Precio Total: <input type="number" name="precioDia" value="<?= $coches->getPrecioDia() ?>" required>
+                        Numero Puertas: <input type="number" name="numeroPuertas" value="<?= $coches->getNumeroPuertas() ?>" required>
+                        Combustible: <input type="text" name="tipoCombustible" value="<?= $coches->getTipoCombustible() ?>" required>
 
                         <button type="submit">Guardar</button>
                         <!--Boton Eliminar-->
-                <td><a href="index.php?accion=eliminar&id=<?= $persona->getId() ?>">Eliminar </td>
+                <td><a href="index.php?accion=eliminar&id=<?= $coches->getId() ?>">Eliminar </td>
                 </form>
                 </td>
             <tr>
