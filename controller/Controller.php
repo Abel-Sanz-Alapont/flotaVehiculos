@@ -35,4 +35,13 @@ class Controller
 
         include "views/agregar.php";
     }
+       public function editarCoches()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+           $this->gestor->editarCoches($_POST['id'], $_POST['marca'], $_POST['modelo'], $_POST['matricula'], $_POST['precioDia'], $_POST['numeroPuertas'], $_POST['tipoCombustible']);
+
+            header("Location: index.php");
+            exit;
+        }
+    }
 }
