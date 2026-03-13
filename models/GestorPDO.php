@@ -49,7 +49,7 @@ class GestorPDO extends Connection
         return $stmt->execute();
     }
 
-    public function editarCoches($id, $marca, $modelo, $matricula, $precioDia, $numeroPuertas, $tipoCombustible) 
+    public function editarCoches($id, $marca, $modelo, $matricula, $precioDia, $numeroPuertas, $tipoCombustible)
     {
         $consultaSQL = 'UPDATE flotaVehiculos SET marca=:marca, modelo=:modelo, matricula=:matricula, precioDia=:precioDia, numeroPuertas=:numeroPuertas, tipoCombustible=:tipoCombustible WHERE id=:id'; //consulta SQL
         $stmt = $this->conn->prepare($consultaSQL);
@@ -61,11 +61,21 @@ class GestorPDO extends Connection
         $stmt->bindValue(':precioDia', $precioDia, PDO::PARAM_INT);
         $stmt->bindValue(':numeroPuertas', $numeroPuertas, PDO::PARAM_INT);
         $stmt->bindValue(':tipoCombustible', $tipoCombustible, PDO::PARAM_STR);
-        
+
         return $stmt->execute();
     }
 
-        /*public function listarMoto()
+    public function eliminar($id)
+    {
+        $consultaSQL = 'DELETE FROM flotaVehiculos WHERE id=:id' ;
+        $stmt = $this->conn->prepare($consultaSQL);
+
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+        return $stmt->execute();
+    }
+
+    /*public function listarMoto()
     {
 
         $consulta = "SELECT * FROM flotaVehiculos";
