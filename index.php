@@ -9,11 +9,17 @@ $controller = new Controller($gestor);
 $accion = $_GET['accion'] ?? 'index';
 
 switch ($accion) {
+    case 'guardarVehiculo':
+        $controller->tipoVehiculo();
+        break;
     case 'editarCoches':
         $controller->editarCoches();
         break;
     case 'agregarCoches':
         $controller->agregarCoches();
+        break;
+    case 'agregarMotocicleta':
+        $controller->agregarMotocicletas();
         break;
     case 'eliminar':
         $controller->eliminar();
