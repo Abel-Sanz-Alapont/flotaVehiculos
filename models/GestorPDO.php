@@ -8,24 +8,35 @@ class GestorPDO extends Connection
         return parent::__construct();
     }
 
-    public function listarCoches()
+    public function listarVehiculos()//Para listar tanto Coches como Motocicletas
     {
 
         $consulta = "SELECT * FROM flotaVehiculos";
         $rtdo = $this->getConn()->query($consulta);
-        $arrayCoches = [];
+        $arrayVehiculos = [];
         while ($value = $rtdo->fetch(PDO::FETCH_ASSOC)) {
-            $coche = new Coche(
-                $value['id'],
-                $value['marca'],
-                $value['modelo'],
-                $value['matricula'],
-                $value['precioDia'],
-                $value['numeroPuertas'],
-                $value['tipoCombustible']
-            );
-
-            $arrayCoches[] = $coche;
+            if ($value['tipoVehiculo'] == 'Coche') {
+                $Vehiculo = new Coche(
+                    $value['id'],
+                    $value['marca'],
+                    $value['modelo'],
+                    $value['matricula'],
+                    $value['precioDia'],
+                    $value['numeroPuertas'],
+                    $value['tipoCombustible']
+                );
+            } elseif ($value['tipoVehiculo'] == 'Motocicleta') {
+                $Vehiculo = new Motocicleta(
+                    $value['id'],
+                    $value['marca'],
+                    $value['modelo'],
+                    $value['matricula'],
+                    $value['precioDia'],
+                    $value['cilindrada'],
+                    $value['incluyeCasco']
+                );
+            }
+            $arrayCoches[] = $Vehiculo;
         }
         return $arrayCoches;
     }
@@ -67,7 +78,7 @@ class GestorPDO extends Connection
 
     public function eliminar($id)
     {
-        $consultaSQL = 'DELETE FROM flotaVehiculos WHERE id=:id' ;
+        $consultaSQL = 'DELETE FROM flotaVehiculos WHERE id=:id';
         $stmt = $this->conn->prepare($consultaSQL);
 
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
