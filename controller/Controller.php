@@ -14,6 +14,16 @@ class Controller
         include "views/listar.php";
     }
 
+    public function tipoVehiculo(){
+         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $tipo=$_POST['tipoVehiculo'];
+            if ($tipo =='Coche') {
+                $this->agregarCoches();
+            }elseif($tipo=='Motocicleta'){
+                $this->agregarMotocicletas();
+            }
+         }
+    }
     public function agregarCoches()
     {
 
