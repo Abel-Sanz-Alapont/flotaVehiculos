@@ -94,13 +94,13 @@
                             Cilindrada: <input type="number" name="cilindrada" value="<?= $motocicleta->getCilindrada() ?>" required>
                             Incluye Casco:
                             <select name="incluyeCasco">
-                                <option value="1" <?php if ($motocicleta->getIncluyeCasco() == 1) ?>>Sí</option>
-                                <option value="0" <?php if ($motocicleta->getIncluyeCasco() == 0) ?>>No</option>
+                                <option value="1" <?php if ($motocicleta->getIncluyeCasco() == 1)?>>Sí</option>
+                                <option value="0" <?php if ($motocicleta->getIncluyeCasco() == 0)?>>No</option>
                             </select><br>
                             <br>
                             <button type="submit">Guardar</button>
                             <!--Boton Eliminar-->
-                    <td><a href="index.php?accion=eliminar&id=<?= $vehiculo->getId() ?>">Eliminar </td>
+                    <td><a href="index.php?accion=eliminar&id=<?= $motocicleta->getId() ?>">Eliminar </a></td>
                     </form>
                     </td>
                 <tr>
