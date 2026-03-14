@@ -13,6 +13,7 @@ class Controller
         $arrayCoches = $this->gestor->listarCoches(); //devuelve array de objetos
         include "views/listar.php";
     }
+
     public function agregarCoches()
     {
 
@@ -27,6 +28,32 @@ class Controller
 
             $nuevoCoche = new Coche(null,$marca,$modelo,$matricula,$precioDia,$numeroPuertas,$tipoCombustible);
             $this->gestor->agregarCoches($nuevoCoche);
+
+            header("Location: index.php");
+            exit;
+        }
+
+
+        include "views/agregar.php";
+    }
+
+        public function agregarMotocicletas()
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  
+                $marca=$_POST['marca'];
+                $modelo=$_POST['modelo'];
+                $matricula=$_POST['matricula'];
+                $precioDia=$_POST['precioDia'];
+                $cilindrada=$_POST['cilindrada'];
+                $incluyeCasco=0;
+                if (isset($_POST['incluyeCasco'])) {
+                    $incluyeCasco=1;
+                }
+
+            $nuevaMotocicleta = new Coche(null,$marca,$modelo,$matricula,$precioDia,$cilindrada,$incluyeCasco);
+            $this->gestor->agregarMotocicletas($nuevaMotocicleta);
 
             header("Location: index.php");
             exit;

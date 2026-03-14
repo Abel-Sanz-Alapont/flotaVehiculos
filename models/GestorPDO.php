@@ -85,17 +85,22 @@ class GestorPDO extends Connection
 
         return $stmt->execute();
     }
-
-    /*public function listarMoto()
+    public function agregarMotocicleta(Motocicleta $moto)
     {
 
-        $consulta = "SELECT * FROM flotaVehiculos";
-        $rtdo = $this->getConn()->query($consulta);
-        $arrayMotocicletas = [];
-        while ($value = $rtdo->fetch(PDO::FETCH_ASSOC)) {
-            $motocileta = new Vehiculo($value['matricula'], $value['modelo'], $value['incluyeCasco'], $value['cilindrada'], $value['tipoVehiculo'], $value['id']);
-            $arrayVehiculos[] = $motocileta;
-        }
-        return $arrayMotocicletas;
-    }*/
+        $consultaSQL = 'INSERT INTO flotaVehiculos (tipoVehiculo, marca, modelo, matricula, precioDia, incluyeCasco, cilindrada) VALUES (:tipoVehiculo, :marca, :modelo, :matricula, :precioDia, :incluyeCasco, :cilindrada)';
+
+        $stmt = $this->conn->prepare($consultaSQL);
+
+        $stmt->bindValue(':tipoVehiculo', 'Coche');
+        $stmt->bindValue(':marca', $moto->getMarca());
+        $stmt->bindValue(':modelo', $moto->getModelo());
+        $stmt->bindValue(':matricula', $moto->getMatricula());
+        $stmt->bindValue(':precioDia', $moto->getPrecioDia());
+        $stmt->bindValue(':incluyeCasco', $moto->getIncluyeCasco());
+        $stmt->bindValue(':cilindrada', $moto->getCilindrada());
+
+
+        return $stmt->execute();
+    }
 }
