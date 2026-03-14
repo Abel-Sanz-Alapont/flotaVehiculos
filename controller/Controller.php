@@ -85,7 +85,12 @@ class Controller
     public function editarMotocicletas()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $this->gestor->editarMotocicletas($_POST['id'], $_POST['marca'], $_POST['modelo'], $_POST['matricula'], $_POST['precioDia'], $_POST['cilindrada'], $_POST['incluyeCasco']);
+            
+            $incluyeCasco=0;
+            if (isset($_POST['incluyeCasco'])) {
+                $incluyeCasco=1;
+            }
+                $this->gestor->editarMotocicletas($_POST['id'], $_POST['marca'], $_POST['modelo'], $_POST['matricula'], $_POST['precioDia'], $_POST['incluyeCasco'], $_POST['cilindrada']);
 
             header("Location: index.php");
             exit;
