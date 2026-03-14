@@ -15,6 +15,9 @@ switch ($accion) {
     case 'editarCoches':
         $controller->editarCoches();
         break;
+    case 'editarMotocicletas':
+        $controller->editarMotocicletas();
+        break;
     case 'agregarCoches':
         $controller->agregarCoches();
         break;
