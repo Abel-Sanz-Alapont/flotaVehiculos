@@ -36,9 +36,9 @@ class GestorPDO extends Connection
                     $value['incluyeCasco']
                 );
             }
-            $arrayCoches[] = $Vehiculo;
+            $arrayVehiculos[] = $Vehiculo;
         }
-        return $arrayCoches;
+        return $arrayVehiculos;
     }
     //CRUD COCHES
     public function agregarCoches(Coche $coche)
@@ -85,7 +85,7 @@ class GestorPDO extends Connection
 
         return $stmt->execute();
     }
-    public function agregarMotocicleta(Motocicleta $moto)
+    public function agregarMotocicletas(Motocicleta $moto)
     {
 
         $consultaSQL = 'INSERT INTO flotaVehiculos (tipoVehiculo, marca, modelo, matricula, precioDia, incluyeCasco, cilindrada) VALUES (:tipoVehiculo, :marca, :modelo, :matricula, :precioDia, :incluyeCasco, :cilindrada)';
