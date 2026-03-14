@@ -92,7 +92,7 @@ class GestorPDO extends Connection
 
         $stmt = $this->conn->prepare($consultaSQL);
 
-        $stmt->bindValue(':tipoVehiculo', 'Coche');
+        $stmt->bindValue(':tipoVehiculo', 'Motocicleta');
         $stmt->bindValue(':marca', $moto->getMarca());
         $stmt->bindValue(':modelo', $moto->getModelo());
         $stmt->bindValue(':matricula', $moto->getMatricula());
