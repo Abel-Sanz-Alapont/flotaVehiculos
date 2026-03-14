@@ -24,7 +24,7 @@
                         <th>Opciones CRUD</th>
                     </tr>
                 </thead>'; ?>
-        <?php foreach ($arrayCoches as $coches): ?>
+        <?php foreach ($arrayVehiculos as $coches): ?>
             <tr>
                 <td><?= $coches->getId() ?></td>
                 <td><?= $coches->getMarca() ?></td>
