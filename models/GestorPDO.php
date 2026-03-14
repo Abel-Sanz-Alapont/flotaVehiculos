@@ -75,16 +75,7 @@ class GestorPDO extends Connection
 
         return $stmt->execute();
     }
-
-    public function eliminar($id)
-    {
-        $consultaSQL = 'DELETE FROM flotaVehiculos WHERE id=:id';
-        $stmt = $this->conn->prepare($consultaSQL);
-
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-
-        return $stmt->execute();
-    }
+    //CRUD MOTOCICLETAS
     public function agregarMotocicletas(Motocicleta $moto)
     {
 
@@ -115,6 +106,16 @@ class GestorPDO extends Connection
         $stmt->bindValue(':precioDia', $precioDia, PDO::PARAM_INT);
         $stmt->bindValue(':cilindrada', $cilindrada, PDO::PARAM_INT);
         $stmt->bindValue(':incluyeCasco', $incluyeCasco, PDO::PARAM_BOOL);
+
+        return $stmt->execute();
+    }
+        //METODO ELIMINAR DEL GESTOR
+    public function eliminar($id)
+    {
+        $consultaSQL = 'DELETE FROM flotaVehiculos WHERE id=:id';
+        $stmt = $this->conn->prepare($consultaSQL);
+
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
         return $stmt->execute();
     }

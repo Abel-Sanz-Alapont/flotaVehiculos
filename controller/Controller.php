@@ -14,7 +14,7 @@ class Controller
         include "views/listar.php";
     }
 
-    public function tipoVehiculo()
+    public function tipoVehiculo() //METODO PARA DIFERENCIAR SI ES UN COCHE O UNA MOTOCICLETA
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $tipo = $_POST['tipoVehiculo'];
@@ -25,7 +25,7 @@ class Controller
             }
         }
     }
-    public function agregarCoches()
+    public function agregarCoches()//METODO AGREGAR COCHES
     {
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -48,7 +48,7 @@ class Controller
         include "views/agregar.php";
     }
 
-    public function agregarMotocicletas()
+    public function agregarMotocicletas()//METODO AGREGAR MOTOCICLETAS
     {
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -73,7 +73,7 @@ class Controller
 
         include "views/agregar.php";
     }
-    public function editarCoches()
+    public function editarCoches()//METODO EDITAR COCHES
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $this->gestor->editarCoches($_POST['id'], $_POST['marca'], $_POST['modelo'], $_POST['matricula'], $_POST['precioDia'], $_POST['numeroPuertas'], $_POST['tipoCombustible']);
@@ -82,7 +82,7 @@ class Controller
             exit;
         }
     }
-    public function editarMotocicletas()
+    public function editarMotocicletas()    //METODO EDITAR MOTOCICLETAS
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
@@ -96,6 +96,7 @@ class Controller
             exit;
         }
     }
+    //Metodo eliminar
     public function eliminar()
     {
         $id = $_GET['id'];

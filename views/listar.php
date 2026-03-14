@@ -37,7 +37,7 @@
                     <td><?= $vehiculo->getTipoCombustible() ?></td>
 
                     <td>
-                        <!--Boton Editar-->
+                        <!--Formulario  Editar Coches-->
                         <form method="POST" action="index.php?accion=editarCoches" style="display:inline;">
                             <input type="hidden" name="id" value="<?= $vehiculo->getId() ?>">
                             Marca: <input type="text" name="marca" value="<?= $vehiculo->getMarca() ?>" required>
@@ -84,7 +84,7 @@
                     <td><?= $motocicleta->getIncluyeCasco() ?></td>
 
                     <td>
-                        <!--Boton Editar-->
+                        <!--Formulario  Editar Motocicletas-->
                         <form method="POST" action="index.php?accion=editarMotocicletas" style="display:inline;">
                             <input type="hidden" name="id" value="<?= $motocicleta->getId() ?>">
                             Marca: <input type="text" name="marca" value="<?= $motocicleta->getMarca() ?>" required>
