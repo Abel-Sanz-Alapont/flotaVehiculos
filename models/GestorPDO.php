@@ -103,4 +103,19 @@ class GestorPDO extends Connection
 
         return $stmt->execute();
     }
+        public function editarMotocicletas($id, $marca, $modelo, $matricula, $precioDia, $incluyeCasco, $cilindrada)
+    {
+        $consultaSQL = 'UPDATE flotaVehiculos SET marca=:marca, modelo=:modelo, matricula=:matricula, precioDia=:precioDia, incluyeCasco=:incluyeCasco, cilindrada=:cilindrada WHERE id=:id'; //consulta SQL
+        $stmt = $this->conn->prepare($consultaSQL);
+
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->bindValue(':marca', $marca, PDO::PARAM_STR);
+        $stmt->bindValue(':modelo', $modelo, PDO::PARAM_STR);
+        $stmt->bindValue(':matricula', $matricula, PDO::PARAM_STR);
+        $stmt->bindValue(':precioDia', $precioDia, PDO::PARAM_INT);
+        $stmt->bindValue(':cilindrada', $cilindrada, PDO::PARAM_INT);
+        $stmt->bindValue(':incluyeCasco', $incluyeCasco, PDO::PARAM_BOOL);
+
+        return $stmt->execute();
+    }
 }

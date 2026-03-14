@@ -82,6 +82,15 @@ class Controller
             exit;
         }
     }
+    public function editarMotocicletas()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $this->gestor->editarMotocicletas($_POST['id'], $_POST['marca'], $_POST['modelo'], $_POST['matricula'], $_POST['precioDia'], $_POST['cilindrada'], $_POST['incluyeCasco']);
+
+            header("Location: index.php");
+            exit;
+        }
+    }
     public function eliminar()
     {
         $id = $_GET['id'];
